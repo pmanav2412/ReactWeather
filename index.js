@@ -9,11 +9,11 @@ app.use(function (req,res,next){
     else{
   res.redirect('http://'+req.hostname+req.url);
     }
-})
+}) 
 
 app.use(express.static("public"));
 
 
-app.listen(Port,function(){
-    console.log("Server has started! at Port" + PORT );
+app.listen(PORT,function(){
+    console.log('Server has started! at Port' + PORT );
 });
