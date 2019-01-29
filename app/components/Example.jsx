@@ -8,7 +8,7 @@ var Example = () => {
     return(
         <div>
             <h2>Example!</h2>
-            <p>This is Example!</p>
+            <p>THIS IS EXAMPLE</p>
         </div>
         
     );
