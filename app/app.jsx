@@ -7,6 +7,8 @@ var Weather=require('Weather');
 var About=require('About');
 var Example=require('Example');
 
+require('style!css!foundation-sites/dist/css/foundation.min.css')
+$(document).foundation();
 
 var {Route,Router,IndexRoute,hashHistory} = require('react-router');
 //<---------------------------------------------------------------->
