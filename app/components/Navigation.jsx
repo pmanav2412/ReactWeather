@@ -7,8 +7,8 @@ var {Link, IndexLink}= require('react-router');
 var Navigation = () => {
     return (
         <div className="top-bar">
-            <div className="menu">
-                <div className="top-bar-left">
+            <div className="top-bar-left">
+                <div className="menu">
                     <ul>
                         <li><IndexLink to="/" activeClassName="active" activeStyle={{fontWeight:'bold'}}>WeatherApp </IndexLink></li>
                     </ul>
@@ -29,33 +29,3 @@ var Navigation = () => {
 
 //<---------------------------------------------------------------->
 module.exports=Navigation;
-
-Copy
-
-            
-            <Link to="/exam" activeClassName="active" activeStyle={{fontWeight:'bold'}}> EXAMPLE</Link>
-
-
-<div >
-  <div class="top-bar-left">
-    <ul class="dropdown menu" data-dropdown-menu>
-      <li class="menu-text">Site Title</li>
-      <li>
-        <a href="#">One</a>
-        <ul class="menu vertical">
-          <li><a href="#">One</a></li>
-          <li><a href="#">Two</a></li>
-          <li><a href="#">Three</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Two</a></li>
-      <li><a href="#">Three</a></li>
-    </ul>
-  </div>
-  <div class="top-bar-right">
-    <ul class="menu">
-      <li><input type="search" placeholder="Search"></li>
-      <li><button type="button" class="button">Search</button></li>
-    </ul>
-  </div>
-</div>
