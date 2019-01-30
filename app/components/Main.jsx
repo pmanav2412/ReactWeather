@@ -3,14 +3,16 @@ var Navigation = require('Navigation');
 //<---------------------------------------------------------------->
 
 var Main = (props) => {
+
     return (
         <div>
         <Navigation/>
-        <h2>Main Component</h2>
-        {props.children}
-
+        <div className="row">
+            <div className="columns small-2 large-4">
+            {props.children}
+            </div>
         </div>
-       
+       </div>
         
     );
 }

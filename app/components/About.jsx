@@ -7,7 +7,7 @@ var About = () => {
     return(
         <div>
              <h2>About</h2>
-        <p>Wellcome to About page.</p>
+        <p>WELLCOME TO MY ABOUT PAGE!</p>
         </div>
        
     );
