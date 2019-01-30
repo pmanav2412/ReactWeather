@@ -1,8 +1,8 @@
 var webpack = require('webpack');
 module.exports={
     entry: [ 'script!jquery/dist/jquery.min.js',
-        'script!foundation-sites/dist/js/foundation.min.js',
-        'script!foundation-sites/dist/css/foundation.min.css',
+        'script!foundation-sites/dist/foundation.min.js',
+        //'script!foundation-sites/dist/css/foundation.min.css',
         './app/app.jsx'],
         externals:{
             jquery:'jQuery'
@@ -39,6 +39,7 @@ module.exports={
                     presets: ['react','es2015','stage-0']
                 },
                 test: /\.jsx?$/,
+                use: [ 'script-loader' ],
                 exclude: /(node_modules|bower_components)/
             }
         ]
