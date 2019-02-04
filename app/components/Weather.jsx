@@ -11,7 +11,7 @@ var ErrorModal = require('ErrorModal');
 
 var Weather = React.createClass({
 
-
+    ////////
         getInitialState: function(){
             return{
                isLoading :false,
@@ -20,20 +20,23 @@ var Weather = React.createClass({
         },
 
 
-
-        handleLocation : function(Location){
+    ////////
+        handleLocation : function(location){
             var that=this;
 
             this.setState({
-                errorMessage: 'city not found',
-                isLoading:true
+                errorMessage: undefined,
+                isLoading:true,
+                location:undefined,
+                temp:undefined
             });
-            WeatherAPI.gettemp(Location).then(function(temp){
-                that.setState({
-               
-                Location:Location,
-                temp: temp,
-                isLoading: false
+
+
+        WeatherAPI.gettemp(location).then(function(temp){
+            that.setState({
+            location:location,
+            temp: temp,
+            isLoading: false
                 
             });
         },function(e){
@@ -43,29 +46,38 @@ var Weather = React.createClass({
                 errorMessage : e.message,
                
             });
-           
-          
         });
-           
         },
-        
 
+
+    /////////
+    componentDidMount: function(){
+    
+        var location = this.props.location.query.location;
+     
+        if(location && location.length > 0){
+            this.handleLocation(location);
+            window.location.hash='#/';
+        }
+       },
+
+
+    /////////
+    componentWillReceiveProps: function(newProps){
+        var location = newProps.location.query.location;
+        
+        if(location && location.length > 0){
+            this.handleLocation(location);
+            window.location.hash='#/';
+        }
+    },
+
+    /////////
         render: function(){
-            var {Location,temp,isLoading,errorMessage} = this.state;
+            var {location,temp,isLoading,errorMessage} = this.state;
            
             console.log(this.state.errorMessage);
             
-                
-
-            function renderMessage() {
-                if(isLoading){
-                return <h3>Fetching Weather....</h3>
-                }
-                else if(temp && Location){
-                return <WeatherMessage temp={temp} Location={Location} /> 
-                }
-            }
-
             function renderError(){
                 if(typeof errorMessage ==='string'){
                         return(
@@ -73,7 +85,18 @@ var Weather = React.createClass({
                         )
                 }
 
+            }   
+
+            function renderMessage() {
+                if(isLoading){
+                return <h3>Fetching Weather....</h3>
+                }
+                else if(temp && location){
+                return <WeatherMessage temp={temp} Location={location} /> 
+                }
             }
+
+            
 
             return(
                 <div>

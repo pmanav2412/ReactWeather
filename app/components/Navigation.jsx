@@ -8,8 +8,13 @@ var Navigation = React.createClass({
     //////////
     onSearch : function (e) {
         e.preventDefault();
-        alert("not now");
-        this.refs.L.value ='';
+        var encodedLocation = encodeURIComponent(this.refs.L.value)
+        if(this.refs.L.value.length>0){
+           
+            window.location.hash= '#/?location='+ this.refs.L.value;
+            this.refs.L.value ='';
+        }
+       
     },
 
     //////////
