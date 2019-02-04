@@ -8,6 +8,7 @@ var About=require('About');
 var Example=require('Example');
 
 require('style!css!foundation-sites/dist/foundation.min.css');
+require('style!css!applicationStyles');
 $(document).foundation();
 
 var {Route,Router,IndexRoute,hashHistory} = require('react-router');

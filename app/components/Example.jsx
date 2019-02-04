@@ -8,7 +8,7 @@ var {Link} = require('react-router')
 var Example = () => {
     return(
         <div>
-            <h2 class="text-center">Example!</h2>
+            <h2 className="text-center page-title">Example!</h2>
             <p>Here are Some Of The Examples To Try Out.</p>
             <ol>
                 <li><Link to="/">Miami, FL</Link></li>

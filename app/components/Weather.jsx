@@ -25,7 +25,7 @@ var Weather = React.createClass({
             var that=this;
 
             this.setState({
-                errorMessage: undefined,
+                errorMessage: 'city not found',
                 isLoading:true
             });
             WeatherAPI.gettemp(Location).then(function(temp){
@@ -77,7 +77,7 @@ var Weather = React.createClass({
 
             return(
                 <div>
-                     <h2 className="text-center">Get Weather</h2>
+                     <h2 className="text-center page-title">Get Weather</h2>
                      <WeatherForm onLocation={this.handleLocation}/>
                      {renderMessage()}
                      {renderError()}
